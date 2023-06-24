@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <title>Galeria Mexicana - About</title>
+
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='hd.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+           
+        }
+
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#" style="font-family: 'Merienda', cursive;">Galeria Mexicana</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop">Comprar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2 class="display-4 mb-4 text-center" style="font-family: 'Merienda', cursive;">Acerca de Galería Mexicana</h2>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <p>Galería Mexicana es un emprendimiento vibrante y en constante evolución, que se estableció en el año 2021.</p>
+                <p>El emprendimiento fue concebido con el objetivo principal de importar y distribuir productos tradicionales mexicanos en Costa Rica, con la misión de estrechar lazos culturales y comerciales entre ambos países. Ha logrado destacar al proporcionar acceso a una variedad de artículos auténticos de diferentes regiones de México que no se encuentran fácilmente en el mercado costarricense.</p>
+                <p>Con el tiempo, Galería Mexicana ha expandido su catálogo de productos de manera impresionante. Actualmente, ofrece una amplia gama de productos que incluyen textiles, dulces, ropa, accesorios y licores, satisfaciendo así a un amplio espectro de clientes con gustos y necesidades variados. Además, ofrece un servicio de venta bajo pedido, lo que significa que los clientes pueden solicitar específicamente cualquier artículo mexicano que deseen, lo que refuerza aún más su compromiso con la satisfacción del cliente.</p>
+                <p>Su eslogan, “De México a tus manos”, encapsula de manera elocuente su enfoque de negocio centrado en el cliente, y su objetivo de hacer que los productos mexicanos sean accesibles a la población costarricense.</p>
+                <p>El éxito de Galería Mexicana también se ha reflejado en sus plataformas de redes sociales, donde ha logrado generar una considerable base de seguidores en <a href="https://www.facebook.com/galeriamexicanacr" target="_blank">Facebook</a> e <a href="https://www.instagram.com/galeriamexicanacr/" target="_blank">Instagram</a>. La interacción en estas plataformas ha ayudado al emprendimiento a aumentar su visibilidad, establecer un vínculo más sólido con su base de clientes y, finalmente, impulsar las ventas.</p>
+                <p>En resumen, Galería Mexicana ha demostrado ser un emprendimiento prometedor que ha logrado traducir una pasión por la cultura mexicana en un próspero negocio de importación y distribución. Su éxito hasta ahora augura un futuro brillante y lleno de oportunidades para crecer y seguir compartiendo la rica diversidad de productos mexicanos con los consumidores en Costa Rica.</p>
+                </div>
+                </div>
+                </div>
+                <div class="container py-5">
+                    <h2 class="display-4 text-center mb-4" style="font-family: 'Merienda', cursive;">Ubicación</h2>
+                    <div class="d-flex justify-content-center">
+                        <iframe class="mx-auto d-block" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15723.407246018705!2d-83.9144024!3d9.8627974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0df55eb2010ab%3A0x8547b443a160da15!2sGaler%C3%ADa%20Mexicana!5e0!3m2!1ses!2scr!4v1687199555317!5m2!1ses!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                
+                <div class="py-5 text-center">
+                    <h2 class="display-4 mb-4" style="font-family: 'Merienda', cursive;">Contacto</h2>
+                    <p class="lead">125 metros sur del Calvario de la Basílica de los Ángeles</p>
+                    <p class="lead">Teléfono: +506 8739 6001</p>
+                    <p class="lead">Email: espacioscreativos@hotmail.it</p>
+                    <a href="/order" class="btn btn-lg btn-primary">Haz tu pedido</a>
+                </div>
+                
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+            </body>
+            </html>                

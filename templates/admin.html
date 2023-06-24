@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <title>Galería Mexicana - Admin</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#" style="font-family: 'Merienda', cursive;">Galeria Mexicana</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop">Comprar</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">Admin <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="mt-4 mb-4">Admin</h1>
+
+        <h2 class="mb-4">Añade un nuevo producto</h2>
+
+        <form method="POST" action="{{ url_for('admin') }}" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.name.label }} {{ form.name(class='form-control') }}
+            </div>
+            <div class="form-group">
+                {{ form.description.label }} {{ form.description(class='form-control') }}
+            </div>
+            <div class="form-group">
+                {{ form.price.label }} {{ form.price(class='form-control') }}
+            </div>
+            <div class="form-group">
+                {{ form.image.label }} {{ form.image(class='form-control-file') }}
+            </div>
+            <button type="submit" class="btn btn-primary">Añadir</button>
+        </form>
+
+        <h2 class="mt-5 mb-3">Productos existentes:</h2>
+
+        <ul>
+            {% for product in products %}
+            <li>{{ product.name }} - ${{ product.price }}
+                <form method="POST" action="{{ url_for('delete_product', id=product.id) }}" style="display: inline;">
+                    {{ csrf_token() }}
+                    <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>
