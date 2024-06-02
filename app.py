@@ -1,12 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for, send_file, abort
 from flask_sqlalchemy import SQLAlchemy
-from flask_wtf import FlaskForm 
+from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FloatField, FileField
 from flask_wtf.csrf import CSRFProtect
 import base64
-from flask import send_file, abort
 from io import BytesIO
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/santiago/Documents/test.db'
@@ -83,15 +81,13 @@ def about():
 @app.route('/shop', methods=['GET', 'POST'])
 def shop():
     form = ProductForm()
-    selected_products = []  # Agregar esta línea para asegurarse de que siempre haya una lista inicializada
+    selected_products = []
     if request.method == 'POST':
         selected_products = request.form.getlist('selected_product')
         total = calculate_total(selected_products)
     else:
         total = 0
     return render_template('shop.html', products=Product.query.all(), selected_products=selected_products, total=total, form=form)
-
-
 
 def calculate_total(selected_products):
     total = 0
