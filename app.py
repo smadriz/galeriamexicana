@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, send_file
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm 
 from wtforms import StringField, SubmitField, FloatField, FileField
@@ -9,7 +9,7 @@ from io import BytesIO
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/santiago/Desktop/test.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/santiago/Documents/test.db'
 app.config['SECRET_KEY'] = 'your-secret-key'
 
 db = SQLAlchemy(app)

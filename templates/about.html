@@ -11,6 +11,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Merienda&display=swap" rel="stylesheet">
 
+     <!-- FontAwesome for social media icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <!-- Custom CSS -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 
@@ -18,38 +21,107 @@
 
     <style>
         body {
-            background-image: url("{{ url_for('static', filename='hd.png') }}");
+            background-image: url("{{ url_for('static', filename='video.gif') }}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
            
         }
-
+        .top-bar {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+        
+        .top-bar .message {
+            flex-grow: 1;
+            font-weight: 300;
+        }
+        
+        .top-bar .navbar-socials a {
+            color: #ffffff;
+            margin: 0 10px;
+        }
+        
+        .top-bar .container-fluid {
+            display: flex;
+            justify-content: flex-end;
+        }
+         
+        .navbar-nav {
+            flex: 1;
+            justify-content: center;
+        }
+        
+        .navbar-brand {
+            flex-grow: 0;
+            color: #ffffff !important;
+        }
+        
+        .navbar-brand .brand-text {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+        }
+        
+        .navbar-brand .brand-text span {
+            font-size: 0.8em;
+        }
         
     </style>
 </head>
+
+    <!-- Nueva barra superior con los iconos -->
+    <div class="top-bar">
+        <div class="container-fluid d-flex">
+            <span class="message">Envíos a cualquier parte de Costa Rica</span>
+            <div class="navbar-socials d-flex">
+                <a href="tel:+50687396001"><i class="fas fa-phone"></i></a>
+                <a href="mailto:espacioscreativos@hotmail.it"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.link/osnwy5" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/galeriamexicanacr/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/galeriamexicanacr/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#" style="font-family: 'Merienda', cursive;">Galeria Mexicana</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Texto "GALERÍA MEXICANA" en el centro -->
+        
+            <div class="brand-text">
+                <span>GALERÍA</span>
+                <span>MEXICANA</span>
+            </div>
+    
+        <!-- Enlaces a la izquierda -->
+        <div class="collapse navbar-collapse justify-content-start" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link{{ ' active' if request.path == '/' else '' }}" href="/">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/about">Acerca de</a>
+                    <a class="nav-link{{ ' active' if request.path == '/about' else '' }}" href="/about">NOSOTROS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/shop">Comprar</a>
+                    <a class="nav-link{{ ' active' if request.path == '/shop' else '' }}" href="/shop">PRODUCTOS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin">Admin</a>
+                    <a class="nav-link{{ ' active' if request.path == '/admin' else '' }}" href="/admin">ADMIN</a>
                 </li>
             </ul>
         </div>
+    
+        <!-- Logo en el lado derecho -->
+        <a class="navbar-brand ml-auto" href="#">
+            <img src="{{ url_for('static', filename='featured_images/logo.png') }}" alt="Galería Mexicana" style="height: 40px;">
+        </a>
+    
+        <!-- Botón hamburguesa -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
     </nav>
 
     <div class="container mt-5">

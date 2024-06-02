@@ -1,0 +1,126 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.627) !important;
+    position: absolute !important;
+    width: 100% !important;
+    z-index: 10 !important;
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-brand .brand-text span {
+    font-size: 1.2em;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption h1,
+.carousel-caption h3 {
+    color: #ffffff;
+}
+
+.card {
+    border: none;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #333333;
+}
+
+.card-text {
+    color: #666666;
+}
+
+.navbar-nav {
+    flex: 1;
+    justify-content: center;
+}
+
+.navbar-brand {
+    flex-grow: 0;
+    color: #ffffff !important;
+}
+
+.navbar-brand .brand-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.navbar-brand .brand-text span {
+    font-size: 0.8em;
+}
+
+#searchForm {
+    display: none;
+}
+
+#searchIcon:focus + #searchForm {
+    display: inline-block;
+}
+
+.map-container,
+.tiktok-container {
+    height: 600px;
+    overflow: hidden;
+}
+
+.map-container iframe,
+.tiktok-container iframe {
+    height: 100%;
+}
+
+.top-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar .message {
+    flex-grow: 1;
+    font-weight: 300;
+}
+
+.top-bar .navbar-socials a {
+    color: #ffffff;
+    margin: 0 10px;
+}
+
+.top-bar .container-fluid {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.carousel-item img {
+    height: 400px;  /* adjust this to the height you want */
+    object-fit: cover;
+}
