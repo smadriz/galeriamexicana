@@ -13,6 +13,10 @@ app.config['SECRET_KEY'] = 'your-secret-key'
 db = SQLAlchemy(app)
 csrf = CSRFProtect(app)
 
+# Create tables at the start
+with app.app_context():
+    db.create_all()
+
 class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
@@ -26,10 +30,6 @@ class ProductForm(FlaskForm):
     price = FloatField('Price')
     image = FileField('Image')
     submit = SubmitField('Submit')
-
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin():
